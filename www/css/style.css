@@ -1,0 +1,76 @@
+/* Angular forms */
+
+input.ng-dirty.ng-invalid:not(:focus){
+	color: red;
+}
+
+/* General */
+
+#logo{
+	margin-top:5px;
+}
+
+.back-text{
+	visibility:hidden;
+}
+
+/* Page artisan */
+
+#artisan .item-image>img{
+	width:auto;
+	max-height:350px;
+}
+
+/* Page commentaire */
+
+#commentaire ul{
+	width:235px;
+	margin:auto;
+}
+
+#commentaire ul>li>i{
+	padding:0;
+}
+
+#commentaire .item-input{
+	padding-right:16px;
+}
+
+/* Page details */
+
+#details ul{
+	width:235px;
+	margin:auto;
+}
+
+#details ul>li>i{
+	padding:0;
+}
+
+#details .item-input{
+	padding-right:16px;
+}
+
+#details .bar-footer{
+	padding:0;
+	border:0;
+}
+
+#details .bar-footer .title{
+	margin:0;
+	height:44px;
+}
+
+#details .bar-footer .title>button{
+	background-color:#ddda00;
+	color:#444;
+	border-bottom:0;
+	font-size:18px;
+	margin:0;
+	height:44px;
+}
+
+/*#details .bar-footer,#details .bar-footer .title,#details .bar-footer .title>button{
+	padding:0;
+	margin:0;
+}*/

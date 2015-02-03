@@ -1,0 +1,17 @@
+<ion-view title="<img id='logo' src='images/signature.png'>" id="commentaire" >
+	<ion-content padding="true" class="has-header has-tabs">
+		<div class="list">
+		  <label class="item item-input item-stacked-label">
+		    <span class="input-label">Titre</span>
+		    <input type="text" ng-model="$root.title" placeholder="Titre de l'avis">
+		  </label>
+		  <label class="item item-input item-stacked-label">
+		    <textarea rows="15" ng-model="$root.description" placeholder="Exprimer votre avis ici"></textarea>
+		  </label>
+		  <label class="item item-input item-stacked-label">
+		  	<span class="input-label">Note globale</span>
+		    <rating ng-model="$root.rating" max="6" data-tap-disabled="true"></rating>
+		  </label>
+		</div>
+	</ion-content>
+</ion-view>

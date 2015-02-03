@@ -1,0 +1,18 @@
+<ion-view title="<img id='logo' src='images/signature.png'>">
+    <ion-content padding="true" scroll="false" class="has-header">
+        <form name="signup" ng-submit="signup.$valid && submitSignup(signupForm)" ng-init="signupForm = {}">
+            <ion-list>
+                <label class="item item-input">
+                    <input type="text" placeholder="Nom" ng-model="signupForm.fullname" required>
+                </label>
+                <label class="item item-input">
+                    <input type="email" placeholder="Email" ng-model="signupForm.email" required>
+                </label>
+                <label class="item item-input">
+                    <input type="password" placeholder="Mot de passe" ng-model="signupForm.password" required>
+                </label>
+            </ion-list>
+            <input type="submit" class="button button-dark button-block" value="S'inscrire">
+        </form>
+    </ion-content>
+</ion-view>

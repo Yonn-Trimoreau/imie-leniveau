@@ -1,0 +1,24 @@
+<ion-side-menus>
+    <ion-side-menu side="left">
+        <ion-header-bar class="bar-stable">
+            <h1 class="title">{{user.fullname}}</h1>
+        </ion-header-bar>
+        <ion-content padding="false" scroll="false" class="has-header">
+            <ion-list>
+            	<ion-item ng-click="artisan()">Artisan</ion-item>
+                <ion-item ng-click="avis()">D&eacute;p&ocirc;t d'avis</ion-item>
+                <ion-item ng-click="logOut()">Se d&eacute;connecter</ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
+    <ion-pane ion-side-menu-content>
+    	<ion-nav-bar class="bar bar-header bar-dark">
+        	<ion-nav-back-button></ion-nav-back-button>
+        	<ion-nav-buttons side="left">
+            	<button class="button button-icon button-clear ion-navicon" ng-click="toggleLeft()">
+            	</button>
+        	</ion-nav-buttons>
+	    </ion-nav-bar>
+        <ion-nav-view></ion-nav-view>
+    </ion-pane>
+</ion-side-menus>

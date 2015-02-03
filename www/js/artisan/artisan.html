@@ -1,0 +1,21 @@
+<ion-view title="<img id='logo' src='images/signature.png'>">
+	<ion-content padding="true" scroll="true" class="has-header" id="artisan" ng-show="idArtisan !== undefined">
+	    <div class="list card">
+		  <div class="item item-avatar">
+		    <h2>{{artisan.name}}</h2>
+		    <p>{{artisan.activity}}</p>
+		    <p>{{artisan.address}}</p>
+		  </div>
+		  <div class="item item-image">
+		    <img src="images/imgArtisan.png">
+		  </div>
+		  <a class="item item-icon-left" ui-sref="logged.avis.commentaire">
+		    <i class="icon ion-compose"></i>
+		    D&eacute;poser un avis !
+		  </a>
+		</div>
+	</ion-content>
+	<ion-content padding="true" class="has-header" ng-show="idArtisan === undefined">
+		<h3>Vous n'êtes pas pass&eacute; par le scan d'un QrCode pour arriver ici, veuillez y proc&eacute;der.</h2>
+	</ion-content>
+</ion-view>
