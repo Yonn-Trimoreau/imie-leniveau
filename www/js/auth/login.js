@@ -1,11 +1,20 @@
 'use strict';
 
 angular.module('leniveauApp.login', [])
-       .controller('LoginCtrl', ['$scope', '$auth', '$state', 'errorsService', function($scope, $auth, $state, errorsService) {
+       .controller('LoginCtrl', ['$scope', '$auth', '$state', 'errorsService', '$http', function($scope, $auth, $state, errorsService, $http) {
 
     $auth.validateUser();
     
     $scope.loginForm = {};
+    
+    $scope.sendLogin = function(loginForm){
+    	$http({
+    		method: 'POST',
+    		url: 'http://localhost:2010/Services/Connexion.ashx',
+    		data: $.param({user_connect_email:loginForm.user_connect_email,user_connect_pwd1:loginForm.user_connect_pwd1}),
+    		headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+    	});
+    };
     
     $scope.$on('auth:login-success', function(ev, user){
         $state.go("logged.artisan");

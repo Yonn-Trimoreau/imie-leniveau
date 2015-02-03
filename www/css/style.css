@@ -1,7 +1,11 @@
 /* Angular forms */
 
-input.ng-dirty.ng-invalid:not(:focus){
+input.ng-dirty.ng-invalid{
 	color: red;
+}
+
+input.ng-dirty.ng-invalid:focus{
+	color:black;
 }
 
 /* General */
