@@ -11,8 +11,16 @@ angular.module('leniveauApp.login', [])
     	$http({
     		method: 'POST',
     		url: 'http://localhost:2010/Services/Connexion.ashx',
-    		data: $.param({user_connect_email:loginForm.user_connect_email,user_connect_pwd1:loginForm.user_connect_pwd1}),
-    		headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+    		data: {
+    			user_connect_email:loginForm.user_connect_email,
+    			user_connect_pwd1:loginForm.user_connect_pwd1
+    		}
+    	})
+    	.success(function(data){
+    		
+    	})
+    	.error(function(data){
+    		console.log(data);
     	});
     };
     
