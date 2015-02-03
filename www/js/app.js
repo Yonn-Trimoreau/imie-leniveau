@@ -139,9 +139,12 @@ angular.module('leniveauApp',
 	$ionicConfigProvider.navBar.alignTitle('center');
 	
 	// Use x-www-form-urlencoded Content-Type
-    $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8';
+    $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+    delete $httpProvider.defaults.headers.common["X-Requested-With"];
+    $httpProvider.defaults.useXDomain = true;
     // Override $http service's default transformRequest
     $httpProvider.defaults.transformRequest = [function (data) {
+    	console.log("hello");
         /**
          * The workhorse; converts an object to x-www-form-urlencoded serialization.
          * @param {Object} obj

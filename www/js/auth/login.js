@@ -8,19 +8,25 @@ angular.module('leniveauApp.login', [])
     $scope.loginForm = {};
     
     $scope.sendLogin = function(loginForm){
-    	$http({
-    		method: 'POST',
-    		url: 'http://localhost:2010/Services/Connexion.ashx',
-    		data: {
-    			user_connect_email:loginForm.user_connect_email,
-    			user_connect_pwd1:loginForm.user_connect_pwd1
-    		}
-    	})
-    	.success(function(data){
-    		
-    	})
-    	.error(function(data){
-    		console.log(data);
+    	var contentType ="application/x-www-form-urlencoded; charset=utf-8";
+    	 
+    	if(window.XDomainRequest) //for IE8,IE9
+    	    contentType = "text/plain";
+    	 
+    	$.ajax({
+    	     url:"http://localhost:2010/Services/Connexion.ashx",
+    	     data:"user_connect_email="+loginForm.user_connect_email+"&user_connect_pwd1="+loginForm.user_connect_pwd1,
+    	     type:"POST",
+    	     dataType:"json",   
+    	     contentType:contentType,    
+    	     success:function(data)
+    	     {
+    	        alert("Data from Server"+JSON.stringify(data));
+    	     },
+    	     error:function(jqXHR,textStatus,errorThrown)
+    	     {
+    	        alert("You can not send Cross Domain AJAX requests: "+errorThrown);
+    	     }
     	});
     };
     

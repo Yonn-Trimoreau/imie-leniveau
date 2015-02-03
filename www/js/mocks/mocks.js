@@ -5,6 +5,7 @@ angular.module('leniveauApp')
     	   
     //Send all html files
     $httpBackend.whenGET(/.+html/).passThrough();
+    $httpBackend.whenPOST("http://localhost:2010/Services/Connexion.ashx").passThrough();
     
     var mockUsers = [
         {
